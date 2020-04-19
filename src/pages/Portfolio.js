@@ -106,7 +106,7 @@ const Portfolio = (props) => {
           I am a Frontend Developer. I like to{' '}
         </h1>
         <h1 style={{textAlign: 'center'}}>
-          explore and learn about new technologies
+          explore and learn about new technologies.
         </h1>
         <div></div>
       </div>

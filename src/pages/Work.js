@@ -1,23 +1,20 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-// import withStyles from '@material-ui/styles/withStyles';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
 const styles = (theme) => ({
     image: {
-        width:'430px',
+        width:'200px',
         height:'200px'
-        // paddingTop:'10px'
     },
     grid1: {
-        border: '1px solid black',
-
-        height:'350px',
+        border: '2px solid black',
+        height:'400px',
         borderRadius: '5px',
         fontSize: '1rem',
     color: 'black',
-    fontWeight: 'bold',
-    margin:'90px'
+    margin:'40px',
+    width:'200px'
     },
     profileAlign : {
         display:'flex'
@@ -26,10 +23,7 @@ const styles = (theme) => ({
         padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
-      },
-    // content: {
-    //     height:'280px'
-    // }
+      }
 });
 
 const Work = (props) => {
@@ -37,26 +31,31 @@ const Work = (props) => {
     const skills = profileInfo && profileInfo.projectImage && 
                 profileInfo.projectImage.map((image)=> {
                     return (
-                        <Grid 
-                            className={classes.paper} 
-                            item xs={6}
-                            > 
-                            <div className={classes.grid1}>
+                        // <Grid 
+                        //     className={classes.paper} 
+                        //     item xs={6}
+                        //     > 
+                            <div 
+                            // style={{width:'200px', margin:'40px'}}
+                            className={classes.grid1}
+                            >
                                 <img 
                                 className={classes.image} 
                                 src={image.fields.file.url} alt="Profile No found"></img>
-                                <div>
+                                <div style={{padding:'5px'}}>
                                 {image.fields.description}
                                 </div>
                             </div>
-                        </Grid>
+                        // </Grid>
                     )
                 });
     return (
         <div>
-             <Grid container spacing={5}>
+             {/* <Grid container spacing={5}> */}
+             <div style={{display:'flex', paddingTop: '80px', paddingLeft: '60px'}}>
                 {skills}
-                </Grid>
+                </div>
+                {/* </Grid> */}
         </div>
     );
 }
